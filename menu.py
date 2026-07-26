@@ -1,3 +1,6 @@
+import webbrowser
+from urllib.parse import quote
+
 def menu():
     menu = """
     =============
@@ -27,7 +30,12 @@ def menu():
 
 def buscar_google():
     termo = input("Digite o termo de busca: ")
-    print(f"https://www.google.com/search?q={termo}")
+    
+    termoInputFormatado = quote(termo)
+
+    url = f"https://www.google.com/search?q={termoInputFormatado}" 
+
+    webbrowser.open(url)
 
 def buscar_youtube():
     termo = input("Digite o termo de busca: ")
